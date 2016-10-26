@@ -2,53 +2,280 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>大作业</title>
-    <!--<link rel="stylesheet" type="text/css" href="../Css/reset.css">-->
-    <style>
-        body,p{margin: 0;padding: 0;}
-        @media screen and (min-width: 1205px){
-            .g-header{width: 100%;height: 125px;background: #ccc;}
-            /* 头文件 */
-            #m-noticeBox{height: 36px;width: 100%;background: rgb(243,243,243);position: relative;}
-            #notice{width: 1206px;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);}
-            #notice p{float: left;}
-            #notice a,img{float: right;}
-            /* 头文件 */
-            .g-article{width: 1206px;height: 2529px;margin: 0 auto;}
-            .g-section{width: 960px;height: 200px;float: left;background: #ccc;}
-            .g-aside{width: 225px;height: 200px;float: right;background: #ccc;}
-            .g-footer{width: 100%;height: 263px;background: #ccc;}
-        }
-    </style>
+    <title>桌迷藏-会员表</title>
 </head>
+        <style>
+            * {
+                vertical-align: baseline;
+                font-weight: inherit;
+                font-family: "Microsoft YaHei UI";
+                font-style: inherit;
+                font-size: 100%;
+                color:#333;
+                outline: 0;
+                padding: 0;
+                margin: 0;
+                background: #f9f9f9;
+            }
+            a:link ,a:visited ,a:hover,a:active {
+                text-decoration: none;
+            }
+                .box{font-size: 40px;position: relative;left: 50%;transform: translate(-50%);top: 50px;}
+            table,thead,tr,th{border: 2px solid #ddd; border-collapse: collapse;}
+            table{width: 800px;margin: 0 auto;}
+            .logo{width: 60px;height: 60px;}
+            .logo2{width: 150px;height: 150px;position: relative;left: 50%;transform: translate(-50%);}
+            h1{text-align: center;}
+            h2{font-size: 40px;display: inline-block;position: relative;left: 10px;top: -18px;}
+            .foot{height: 100px;;width: 200px;position: relative;top: 80px;left: 80%;transform: translate(-80%);}
+            caption{height: 70px;}
+        </style>
 <body>
-    <header class="g-header">
-        <div id="m-noticeBox">
-            <div id="notice">
-                    <p>网易云课堂微专业，帮助你掌握专业技能，令你求职加薪多一份独特优势！</p>
-                    <p>立即查看></p>
-                    <a href="#">不再提醒</a><img src="#">
-            </div>
+        <div class="box">
+            <img class="logo2" src="logo3.0.png">
+            <h1>wereWolf</h1>
+            <table>
+                <caption>桌迷藏-会员表</caption>
+                <thead>
+                <tr>
+                    <th>昵称</th>
+                    <th>余额</th>
+                    <th>积分</th>
+                    <th>累计积分</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>峰少</th>
+                    <th>-10</th>
+                    <th>310</th>
+                    <th>10</th>
+                </tr>
+                <tr>
+                    <th>阿军</th>
+                    <th>30</th>
+                    <th>370</th>
+                    <th>70</th>
+                </tr>
+                <tr>
+                    <th>三水</th>
+                    <th>-10</th>
+                    <th>320</th>
+                    <th>20</th>
+                </tr>
+                <tr>
+                    <th>杨小洋</th>
+                    <th>95</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>齐叔</th>
+                    <th>95</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>鱼黑</th>
+                    <th>95</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>瑶瑶</th>
+                    <th>20</th>
+                    <th>295</th>
+                    <th>-5</th>
+                </tr>
+                <tr>
+                    <th>阿洲</th>
+                    <th>40</th>
+                    <th>325</th>
+                    <th>25</th>
+                </tr>
+                <tr>
+                    <th>小宇</th>
+                    <th>70</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>胡海伟</th>
+                    <th>370</th>
+                    <th>900</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>魏彧</th>
+                    <th>95</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>黄强</th>
+                    <th>30</th>
+                    <th>375</th>
+                    <th>75</th>
+                </tr>
+                <tr>
+                    <th>阿水水水</th>
+                    <th>90</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>泡泡</th>
+                    <th>-10</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>小鸡</th>
+                    <th>15</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>王洁</th>
+                    <th>65</th>
+                    <th>315</th>
+                    <th>15</th>
+                </tr>
+                <tr>
+                    <th>鱼头</th>
+                    <th>40</th>
+                    <th>280</th>
+                    <th>-20</th>
+                </tr>
+                <tr>
+                    <th>君子</th>
+                    <th>50</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>潘勃</th>
+                    <th>60</th>
+                    <th>305</th>
+                    <th>5</th>
+                </tr>
+                <tr>
+                    <th>依儒</th>
+                    <th>80</th>
+                    <th>365</th>
+                    <th>65</th>
+                </tr>
+                <tr>
+                    <th>丛丛</th>
+                    <th>110</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>绚饮</th>
+                    <th>110</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>山大</th>
+                    <th>70</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>巧遇猫</th>
+                    <th>80</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>张天宇</th>
+                    <th>80</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>陈方铭</th>
+                    <th>100</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>薛海伦</th>
+                    <th>100</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>潘Sir</th>
+                    <th>90</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>引路人</th>
+                    <th>70</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>福方</th>
+                    <th>60</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>阿布</th>
+                    <th>100</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>阿蛙</th>
+                    <th>100</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>黄翔琪</th>
+                    <th>130</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>PP.丰</th>
+                    <th>90</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>马志诚</th>
+                    <th>110</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>Tank</th>
+                    <th>110</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <th>万总</th>
+                    <th>110</th>
+                    <th>300</th>
+                    <th>0</th>
+                </tr>
+                </tbody>
+            </table>
         </div>
-    </header>
-    <div class="g-banner">
-        banner
-    </div>
-    <div class="g-introduce">
-        introduce
-    </div>
-    <article class="g-article">
-        article
-        <nav class="g-nav">
-            nav
-        </nav>
-        <section class="g-section">
-            section
-        </section>
-        <aside class="g-aside">
-            aside
-        </aside>
-    </article>
-    <footer class="g-footer">footer</footer>
+    <footer>
+        <div class="foot">
+            <img class="logo" src="logo3.0.png">
+            <h2>桌迷藏</h2>
+        </div>
+
+    </footer>
 </body>
 </html>
