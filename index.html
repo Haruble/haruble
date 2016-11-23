@@ -26,6 +26,7 @@
             .logo{width: 60px;height: 60px;}
             .logo2{width: 150px;height: 150px;position: relative;left: 50%;transform: translate(-50%);}
             h1{text-align: center;}
+            h3{text-align: center;font-size: 28px;margin-bottom:24px; }
             h2{font-size: 40px;display: inline-block;position: relative;left: 10px;top: -18px;}
             .foot{height: 100px;;width: 200px;position: relative;top: 80px;left: 80%;transform: translate(-80%);}
             caption{height: 70px;}
@@ -34,9 +35,11 @@
         <div class="box">
             <img class="logo2" src="http://chuantu.biz/t5/39/1477466836x2061797322.png">
             <h1>wereWolf</h1>
-
+            <h1>桌迷藏-会员表</h1>
+            <h3>更新时间11月23日，9：00</h3>
+            
             <table >
-                <caption>桌迷藏-会员表</caption>
+                
                 <thead>
                 <tr>
                     <th>昵称</th>
@@ -438,7 +441,7 @@
                 </tr>
                 </tbody>
             </table>
-            <h1>更新时间11月23日，9：00</h1>
+            
         </div>
     <footer>
         <div class="foot">
@@ -456,15 +459,13 @@
         var x=document.getElementById("x"+i);
         var y=document.getElementById("y"+i);
         arrey[i]=x.innerHTML;
-        var text="(欠费)"
+        var text="(欠)"
         var txt="(0)"
         if(arrey[i]<0){
-            y.style="color:red;";
             y.innerHTML=y.innerHTML+text;
             x.style="color:red;";
         }
         else if(arrey[i]==0){
-            y.style="color:#ffccff;";
             y.innerHTML=y.innerHTML+txt;
             x.style="color:#ffccff;";
         }
