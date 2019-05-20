@@ -5,33 +5,40 @@
     <title></title>
 </head>
 <style>
-    html,body{margin: 0;padding: 0;font-size: 20px;width: 100%;height: 100%;background: repeating-linear-gradient(135deg,#fb3 50%,#58a 33%)}
+    html,body{margin: 0;padding: 0;font-size: 18px;width: 100%;height: 100%;background: repeating-linear-gradient(135deg,#fb3 50%,#58a 33%)}
     #top{display: none}
     #button4{display: none}
     .exam{display: none}
     #questions{display: none}
     #results{display: inline}
     #answerP{display: none}
-    #box{display:none;height: 80%;width: 80%;background: #eee;position: absolute;top: 50%;left: 50%;transform:translate(-50%,-50%);padding: 30px;border-top-left-radius:50px;border-bottom-right-radius:50px}
-    button{width: 100px;height: 40px;font-size: 18px;margin-left: 20px;margin-right: 20px;margin-bottom: 10px;}
     #text{height: 30%;}
     #text fieldset{height: 80%}
-    #options{height: 43%}
-    #options fieldset{height: 220px;}
-    #answer fieldset{height: 80px;}
-    #button{position: relative;text-align:center}
-    input[type=checkbox] {
-        zoom: 130%;
+    button{width: 130px;height: 40px;font-size: 19px;margin-left: 20px;margin-right: 20px;margin-bottom: 10px;}
+    @media(max-width: 960px){
+        #box{display: none;height: 100%;width: 100%;background: #eee;position: absolute;}
     }
-    #password{width: 400px;height: 250px;background: #eee;border-radius: 20px;position: absolute;top: 50%;left: 50%;transform:translate(-50%,-50%);}
-    #passwordInput{width: 200px;height: 30px;font-size: 20px;}
-    #passwordBox{position: relative;text-align:center;top:30%;}
-    #passwordButton1{margin-top: 20px;}
+    @media(min-width: 960px){
+        #box{display:none;height: 80%;width: 80%;background: #eee;position: absolute;top: 50%;left: 50%;transform:translate(-50%,-50%);padding: 30px;border-top-left-radius:50px;border-bottom-right-radius:50px}
+        #options{height: 50%}
+        #options fieldset{height: 250px;}
+        #answer fieldset{height: 50px;}
+        #button{position: relative;text-align:center}
+        input[type=checkbox] {
+            zoom: 130%;
+        }
+        #password{width: 400px;height: 250px;background: #eee;border-radius: 20px;position: absolute;top: 50%;left: 50%;transform:translate(-50%,-50%);}
+        #passwordInput,#passwordInputOut{width: 200px;height: 30px;font-size: 20px;}
+        #passwordBox{position: relative;text-align:center;top:10%;}
+        #passwordButton1{margin-top: 20px;}
+    }
+
 </style>
 <body>
 <div id="password">
     <div id="passwordBox">
-        <input id="passwordInput" type="text" value="请输入密码" onfocus="this.select()"></br>
+        <p>请输入密码</p>
+        <input id="passwordInput" type="password" value="" autofocus="autofocus" onfocus="this.select()"></br>
         <button id="passwordButton1" onclick="passward()">确认</button>
     </div>
 
@@ -51,13 +58,13 @@
     <form>
         <fieldset>
             <legend id="legendOptions">选项</legend>
-            A.<input type="checkbox" name="options"><span id="options1">对应选项A</span></br>
-            B.<input type="checkbox" name="options"><span id="options2">对应选项B</span></br>
-            C.<input type="checkbox" name="options" class="input1"><span id="options3">对应选项C</span></br>
-            D.<input type="checkbox" name="options" class="input1"><span id="options4">对应选项D</span></br>
+            <span>A.</span><input type="checkbox" name="options"><span id="options1"></span></br>
+            <span>B.</span><input type="checkbox" name="options"><span id="options2"></span></br>
+            <span class="input1">C.</span><input type="checkbox" name="options" class="input1"><span id="options3" class="input1"></span></br>
+            <span class="input1">D.</span><input type="checkbox" name="options" class="input1"><span id="options4" class="input1"></span></br>
         </fieldset>
     </form>
-    <p id="results">正确/错误</p>
+    <p id="results">请选择你的答案</p>
 </div>
 <div id="button">
     <button id="button1" onclick="buttonUp()">上一题</button>
@@ -85,8 +92,8 @@
 <table id="table1">
 <tr class="one">
     <td>下列不属于“关注客户”个人的是（ ）。</td>
-    <td title="1">被外汇局列为“关注名单”的个人</td>
-    <td >被外汇局列为“可信客户”的个人</td>
+    <td>被外汇局列为“关注名单”的个人</td>
+    <td title="1" >被外汇局列为“可信客户”的个人</td>
     <td >被外汇局列为“预关注”的个人</td>
     <td >被其他监管部门列为黑名单或被法院列为失信人员的个人</td>
     <td >1</td>
@@ -2602,8 +2609,8 @@
 
 
 <script>
-    var number=279;var numberarr=new Array();var counter=0;var questionsCounter=4;
-    var numberarr2=new Array();var t=new Array();var tc=0;var ac=0;var lc=0;var gc=0;
+    var number=279;var numberarr=[];var counter=0;var questionsCounter=4;var password="wstym";
+    var numberarr2=[];var numberarr3=[];var t=[];var tc=0;var ac=0;var lc=0;var gc=0;
     randomProblemDry();
     randomOptions();
     clear();
@@ -2617,6 +2624,7 @@
         clear2();
         problemDry();
         answer();
+        right();
     }
     function clear2(){
         for(var i=0;i<=3;i++){
@@ -2640,7 +2648,6 @@
         numberarr=arr;
     }
     function randomOptions(){
-        questionsCounter=4;
         var arr = new Array(questionsCounter);
         for(var i=0;i<arr.length;i++){
             arr[i] = i;
@@ -2653,6 +2660,8 @@
             arr[i] = t;
         }
         numberarr2=arr;
+        numberarr3=arr;
+        right();
     }
     function problemDry(){
         var x=document .getElementById ("table1").rows [numberarr[counter]].cells[5];
@@ -2677,18 +2686,21 @@
         for(var i=1;i<=numberarr2.length;i++){
             var id="options"+i;
             var valueTd=document .getElementById ("table1").rows [numberarr[counter]].cells[numberarr2[i-1]+1];
-            document.getElementById(id).style.fontSize="20px";
+            document.getElementById(id).style.fontSize="19px";
             document.getElementById(id).style.color="black";
+            document.getElementById(id).style.fontWeight="normal";
             if(valueTd.title==1){
                 t[i]=i;
                 tc++;
                 if(lc==1){
-                    document.getElementById(id).style.fontSize="22px";
-                    document.getElementById(id).style.color="rgba(200,0,0)";
+                    document.getElementById(id).style.fontSize="20px";
+                    document.getElementById(id).style.color="#c80000";
+                    document.getElementById(id).style.fontWeight="bold";
                 }
                 if(lc==0){
-                    document.getElementById(id).style.fontSize="20px";
+                    document.getElementById(id).style.fontSize="19px";
                     document.getElementById(id).style.color="black";
+                    document.getElementById(id).style.fontWeight="normal";
                 }
             }
             else{
@@ -2701,7 +2713,7 @@
     /*正确/错误判断*/
     function results1() {
         var xc = 0;var yc=0;
-            for (var i = 0; i <= 4; i++) {
+            for (var i = 0; i <= questionsCounter; i++) {
                 var check = document.getElementsByName('options')[i];
                 if(check.checked==false){yc++;}
                 if (check.checked == true) {
@@ -2729,7 +2741,9 @@
             alert("这是最后一题");
         }
         else{
+            document.getElementById('results').innerHTML = "请选择你的答案";
             counter++;
+            right();
             clear();
         }
     }
@@ -2738,18 +2752,19 @@
             alert("这是第一题");
         }
         else{
+            document.getElementById('results').innerHTML = "请选择你的答案";
             counter--;
+            right();
             clear();
         }
     }
     function answer(){
         var x=document.getElementById('answerP');
-        for(var i=1;i<=5;i++){
+        for(var i=1;i<=numberarr2.length;i++){
             if(t[i]==1){x.innerHTML= x.innerHTML+"A"+"</nbsp>";}
             else if(t[i]==2){x.innerHTML= x.innerHTML+"B"+"</nbsp>";}
             else if(t[i]==3){x.innerHTML= x.innerHTML+"C"+"</nbsp>";}
             else if(t[i]==4){x.innerHTML= x.innerHTML+"D"+"</nbsp>";}
-            else if(t[i]==5){x.innerHTML= x.innerHTML+"F"+"</nbsp>";}
         }
     }
     function answerClick(){
@@ -2774,12 +2789,31 @@
     }
     function passward(){
         var x=document.getElementById("passwordInput");
-        if(x.value=="wstym"){
+        if(x.value==password){
          document.getElementById("box").style.display="block";
          document.getElementById("password").style.display="none";
         }
         else{
             alert("请输入正确密码!") ;
         }
+    }
+    function right(){
+        var x=document .getElementById ("table1").rows [numberarr[counter]].cells[5];
+        var y=document.getElementsByClassName("input1").length;
+        if(x.innerHTML==3){
+            questionsCounter=2;
+            numberarr2=[0,1];
+            for(var i=0;i<y;i++){
+                document.getElementsByClassName("input1")[i].style.display="none";
+            }
+        }
+        else{
+            questionsCounter=4;
+            numberarr2=numberarr3;
+            for(var i=0;i<y;i++){
+                document.getElementsByClassName("input1")[i].style.display="inline";
+            }
+        }
+
     }
 </script>
